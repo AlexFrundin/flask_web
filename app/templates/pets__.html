@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block content_app%}
+<div class="container-fluid alert-mess">
+
+{% if pets%}
+<div class="d-lg-flex d-xl-flex justify-content-between aligns-items-end">
+{% for pet in pets%}
+  <div class="card ml-2 mr-2">
+  <div class="card-body ">
+    <div class="card-title">
+      <h2>{{current_user.login}}</h2>
+      <div class="card-subtitle mb-2 text-muted">
+        <h3>{{pet.name}} <span> <h4> {{pet.type}}</h4></span> </h3>
+
+        <div class="card-text"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum animi id ea voluptas ullam eligendi repellat!</p>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endfor %}
+</div>
+{% endif %}
+</div>
+{% endblock %}

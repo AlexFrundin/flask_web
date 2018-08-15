@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block title%}
+  {{super()}}
+  {{title}}
+{%endblock%}
+
+{%block content%}
+  {%if current_user.is_anonymous%}
+  <a href="{{url_for('login')}}">Логин</a>
+    {%else%}
+  {{current_user.login}}
+  <a href="{{url_for('logout')}}">Покинуть нас</a>
+  {%endif%}
+  <a href="{{url_for('test')}}">Поищем что-то</a>
+  
+{%endblock%}

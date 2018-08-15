@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+</head>
+<body>
+      {%if user%}
+        <p> {{user.name}}</p>
+        <p>{{user.age}}</p>
+      {%else%}
+        <p>Привет, Гость!</p>
+      {%endif%}
+      {%for key,item in books.items()%}
+        <div style="float:left; padding:20px;">
+          <h1>{{item.author}}</h1>
+          <h2>{{item.title}}</h2>
+          <h3>{{item.price}}</h3>
+        </div>
+      {%endfor%}
+</body>
+</html>

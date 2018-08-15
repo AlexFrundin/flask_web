@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content_app %}
+<div class="container">
+  <div class="row-ml-4">
+    <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 alert-mess">
+      <div class="text-center">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, assumenda eius repellendus labore laudantium, vero consectetur quaerat, harum quae consequatur a debitis iste. Totam tenetur laboriosam harum obcaecati provident, maxime!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row-ml-4">
+    <div class="col-md-8 col-lg-4 col-xl-4 col-sm-12 alert-mess">
+      <form action="" class="form" method="post" role="form">
+        {{form.hidden_tag()}}
+        {{wtf.form_errors(form, hiddens="only")}}
+        {{wtf.form_field(form.name)}}
+        {{wtf.form_field(form.type)}}
+        {{wtf.form_field(form.submit)}}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock%}

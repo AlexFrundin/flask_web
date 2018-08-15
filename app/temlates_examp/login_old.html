@@ -1,0 +1,100 @@
+{%extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content_app %}
+
+
+<div class='pt-4 mt-5'>
+
+<p>Первая форма!</p>
+  <div class="row">
+    <div class="col-md-4 pl-4">
+        {{ wtf.quick_form(form) }}
+    </div>
+  </div>
+
+
+
+
+
+<p>Вторая форма!</p>
+  <div class="row ml-4">
+    <div class="col-md-4 pl-4">
+      <form  action="" method="post" role="form">
+          {{ form.csrf }}
+      <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your login">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="name" name="password" placeholder="Enter your password">
+      </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row ml-4">
+    <div class="col-md-4 pl-4">
+      <form class="form form-horizontal" method="post" role="form">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+        {{ wtf.form_field(form.name) }}
+        {{ wtf.form_field(form.password) }}
+        {{wtf.form_field(form.submit)}}
+      </form>
+    </div>
+  </div>
+
+
+  <div class="row ml-4">
+    <div class="col-md-4 pl-4">
+      <form action="" method="post", class="form" role="form">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+
+        {{ wtf.form_field(form.name, class='form-control', placeholder="Введи логин!!!!") }}
+        {{ wtf.form_field(form.password,class='form-control', placeholder="Введи пароль!!!") }}
+        {{wtf.form_field(form.submit)}}
+        <input type="submit" class='btn btn-success btn-outline-danger' value="Я иду" >
+      </form>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-4">
+
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="checkbox" checked autocomplete="off"> Checked
+        </label>
+        <label class="btn btn-secondary active">
+          <input type="checkbox" checked autocomplete="off"> Checked2
+        </label>
+        <label class="btn btn-success active">
+          <input type="checkbox" checked autocomplete="off"> Checked3
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <div s>
+
+        <input type="radio" name="options1" id="option1" value="radio"> Active
+
+
+
+      <input type="radio" name="options12" id="option2" value="radio1"> Radio
+
+
+
+      <input type="radio" name="option3" id="option3" value="radio3"> Radio
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts%}
+{{super()}}
+{% endblock %}

@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<form action="{{url_for('test')}}" method="POST">
+  <p>
+    <input type="text" id="login" name="login_user" placeholder="Login name">
+  </p>
+  <p>
+    <input type="password" id="pasword" name="pasw" placeholder="Password name">
+  </p>
+  <p>
+    <input type="email" name="email" placeholder="Email user">
+  </p>
+  <p>
+    <input type="datetime-local" name="date">
+  </p>
+  <input type="submit">
+</form>
+<p>
+  <p>post_data</p>
+{{post_object}}
+</p>
+<p>
+  <p>request_data</p>
+</p>
+
+{%endblock%}

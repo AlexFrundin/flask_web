@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% from "bootstrap/pagination.html" import render_pagination %}
+
+{% block content_app%}
+  <div class="container-fluid alert-mess">
+{%if pets%}
+
+<div class="row">
+  {%for pet in pets.items%}
+  <div class="col-md-4 col-lg-4 col-sm-12 mb-4">
+    <div class="card card-circle text-center text-card">
+      <div class="card-body ">
+      <div class="card-title">
+        <span>{{current_user.login}}</span>
+        <div class="card-subtitle text-muted">
+          <span>{{pet.name}} <span> {{pet.typepet.type}}</span> </span>
+
+          <div class="card-text"></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum animi id ea voluptas ullam eligendi repellat!</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer mb-4">
+      <a href="#" class="btn btn-primary">Подробнее</a>
+    </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+  {%else%}
+
+{%endif%}
+
+
+</div>
+<nav class="nav navbar-fixed-bottom sticky">
+  {{render_pagination(pets)}}
+</nav>
+{% endblock%}

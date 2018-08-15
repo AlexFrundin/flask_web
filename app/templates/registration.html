@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{%block content_app%}
+
+<div class="row ml-4">
+  <div class="col-md-4 pl-4 alert-mess">
+    <form action="" method="post" role="form" class="form form-horizontal">
+      {{ form.hidden_tag() }}
+      {{wtf.form_errors(form, hiddens='only')}}
+      {{wtf.form_field(form.login, class="form-control is-invalid")}}
+      {{wtf.form_field(form.password)}}
+      {{wtf.form_field(form.password2)}}
+      {{wtf.form_field(form.submit)}}
+    </form>
+  </div>
+</div>
+
+{% endblock%}
